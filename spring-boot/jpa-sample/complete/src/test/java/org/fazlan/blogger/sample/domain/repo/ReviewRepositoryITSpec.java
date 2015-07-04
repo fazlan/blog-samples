@@ -1,6 +1,5 @@
 package org.fazlan.blogger.sample.domain.repo;
 
-import org.fazlan.blogger.sample.domain.DomainTestConfig;
 import org.fazlan.blogger.sample.domain.entity.Guest;
 import org.fazlan.blogger.sample.domain.entity.Hotel;
 import org.fazlan.blogger.sample.domain.entity.Review;
@@ -8,8 +7,6 @@ import org.fazlan.blogger.sample.domain.fixture.GuestFixture;
 import org.fazlan.blogger.sample.domain.fixture.HotelFixture;
 import org.fazlan.blogger.sample.domain.fixture.ReviewFixture;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,8 +14,7 @@ import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.fazlan.blogger.sample.domain.entity.Review.Rating;
 
-@ActiveProfiles("int")
-@SpringApplicationConfiguration(classes = DomainTestConfig.class)
+@RepositoryIntegration
 public class ReviewRepositoryITSpec extends AbstractTransactionalTestNGSpringContextTests {
 
     @Autowired

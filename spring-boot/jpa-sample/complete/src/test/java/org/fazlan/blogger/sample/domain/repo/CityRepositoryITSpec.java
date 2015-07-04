@@ -1,12 +1,9 @@
 package org.fazlan.blogger.sample.domain.repo;
 
-import org.fazlan.blogger.sample.domain.DomainTestConfig;
 import org.fazlan.blogger.sample.domain.entity.City;
 import org.fazlan.blogger.sample.domain.fixture.CityFixture;
 import org.fazlan.blogger.sample.domain.spec.CitySpecFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,8 +13,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ActiveProfiles("int")
-@SpringApplicationConfiguration(classes = DomainTestConfig.class)
+@RepositoryIntegration
 public class CityRepositoryITSpec extends AbstractTransactionalTestNGSpringContextTests {
 
     @Autowired
